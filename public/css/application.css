@@ -10,7 +10,10 @@ html{
   text-align: center;
   color: #FFFFFF;
   margin-top: 3rem;
-  font-family: 'Archivo+Black';
+  font-family: 'Wallpoet';
+  font-size: 4rem;
+  letter-spacing: 15px;
+  text-shadow: 0 0 1rem slateblue;
 }
 #row1 > td {
   background: #0074D9;
