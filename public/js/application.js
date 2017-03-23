@@ -66,11 +66,23 @@ var keyCodesAlt = {
     77: 63,
     188: 64
   };
+
 var toggle = false;
 
 $(document).ready(function(){
   var rowNum = 1;
   var cellNum = 1;
+  var soundNum = 1;
+  for (k = 0; k <  14; k++){
+    var audioString = '<audio id="sound' + soundNum + '"><source src="/samples/consolidate/' + soundNum + '.wav">';
+    $(".consolidate").append(audioString)
+    soundNum++;
+  };
+  for (l = 15; l < 37 ; l++  ){
+    var audioString = '<audio id="sound' + soundNum + '"><source src="/samples/crop/' + soundNum + '.wav">';
+    $(".crop").append(audioString)
+    soundNum++;
+  };
   for (i = 0; i < 8; i++){
     var rowString = '<tr id="row' + rowNum + '">'
     $("#launchpad").append(rowString);
@@ -86,6 +98,12 @@ $(document).ready(function(){
   $("#launchpad").on("click", "td" , function(event){
     event.preventDefault();
     var current = $(this);
+    var num = current[0].id.match(/\d+/)[0]
+    var sound = "sound" + num;
+    var getSound = document.getElementById(sound)
+    getSound.pause();
+    getSound.currentTime = 0;
+    getSound.play();
     current.addClass("active");
     setTimeout(function(){
       current.removeClass("active");
@@ -98,17 +116,29 @@ $(document).ready(function(){
       return (toggle === true ? toggle = false : toggle = true);
     };
     if (toggle === false){
-      var current = $('#cell' + keyCodes[event.keyCode])
-    current.addClass("active");
-    setTimeout(function(){
-      current.removeClass("active");
-    }, 150);
+      var num = keyCodes[event.keyCode]
+      var current = $('#cell' + num);
+      var sound = "sound" + num;
+      var getSound = document.getElementById(sound)
+      getSound.pause();
+      getSound.currentTime = 0;
+      getSound.play();
+      current.addClass("active");
+      setTimeout(function(){
+        current.removeClass("active");
+        }, 150);
     } else {
-      var current = $('#cell' + keyCodesAlt[event.keyCode])
-    current.addClass("active");
-    setTimeout(function(){
+      var num = keyCodesAlt[event.keyCode]
+      var current = $('#cell' + num);
+      var sound = "sound" + num;
+      var getSound = document.getElementById(sound)
+      getSound.pause();
+      getSound.currentTime = 0;
+      getSound.play();
+      current.addClass("active");
+      setTimeout(function(){
       current.removeClass("active");
-    }, 150);
+      }, 200);
     }
   });
 })
