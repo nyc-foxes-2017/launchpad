@@ -1,0 +1,52 @@
+html{
+  background-image: url(https://static.pexels.com/photos/70222/pexels-photo-70222.jpeg);
+  background-size: cover;
+}
+#launchpad {
+  margin-top: 2rem;
+  font-size: 14px;
+}
+.title {
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 3rem;
+  font-family: 'Archivo+Black';
+}
+#row1 > td {
+  background: #0074D9;
+}
+#row2 > td{
+  background: #FF851B;
+}
+#row3 > td{
+  background: #FF4136;
+}
+#row4 > td{
+  background: #FFDC00;
+}
+#row5 > td {
+  background: #39CCCC;
+}
+#row6 > td{
+  background: #85144b;
+}
+#row7 > td{
+  background: #AAAAAA;
+}
+#row8 > td{
+  background: #01FF70;
+}
+
+td {
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  opacity: 0.7;
+  display: inline-block;
+  box-shadow: 0px 0px 10px #000000;
+  -webkit-box-shadow: 0px 0px 10px #000000;
+  -moz-box-shadow: 0px 0px 10px #000000;
+}
