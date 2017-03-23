@@ -1,5 +1,4 @@
-$(document).ready(function(){
-  var keyCodes = {
+var keyCodes = {
     49: 1,
     50: 2,
     51: 3,
@@ -32,7 +31,44 @@ $(document).ready(function(){
     78: 30,
     77: 31,
     188: 32
-  }
+  };
+var keyCodesAlt = {
+    49: 33,
+    50: 34,
+    51: 35,
+    52: 36,
+    53: 37,
+    54: 38,
+    55: 39,
+    56: 40,
+    81: 41,
+    87: 42,
+    69: 43,
+    82: 44,
+    84: 45,
+    89: 46,
+    85: 47,
+    73: 48,
+    65: 49,
+    83: 50,
+    68: 51,
+    70: 52,
+    71: 53,
+    72: 54,
+    74: 55,
+    75: 56,
+    90: 57,
+    88: 58,
+    67: 59,
+    86: 60,
+    66: 61,
+    78: 62,
+    77: 63,
+    188: 64
+  };
+var toggle = false;
+
+$(document).ready(function(){
   var rowNum = 1;
   var cellNum = 1;
   for (i = 0; i < 8; i++){
@@ -50,14 +86,29 @@ $(document).ready(function(){
   $("#launchpad").on("click", "td" , function(event){
     event.preventDefault();
     var current = $(this);
-    var match = $(this).parent().prop("id");
-      current.addClass("active");
-      setTimeout(function(){
-        current.removeClass("active");
-        }, 150);
+    current.addClass("active");
+    setTimeout(function(){
+      current.removeClass("active");
+    }, 150);
   });
   $(document).on("keyup", function(event){
     event.preventDefault();
-    debugger
+
+    if (event.keyCode === 16){
+      return (toggle === true ? toggle = false : toggle = true);
+    };
+    if (toggle === false){
+      var current = $('#cell' + keyCodes[event.keyCode])
+    current.addClass("active");
+    setTimeout(function(){
+      current.removeClass("active");
+    }, 150);
+    } else {
+      var current = $('#cell' + keyCodesAlt[event.keyCode])
+    current.addClass("active");
+    setTimeout(function(){
+      current.removeClass("active");
+    }, 150);
+    }
   });
 })
