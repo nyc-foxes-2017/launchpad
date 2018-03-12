@@ -1,5 +1,5 @@
-html{
-  background-image: url(https://static.pexels.com/photos/70222/pexels-photo-70222.jpeg);
+html {
+  background-image: url('../image/background.jpeg');
   background-size: cover;
 }
 #launchpad {
@@ -8,7 +8,7 @@ html{
 }
 .title {
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-top: 3rem;
   font-family: 'Wallpoet';
   font-size: 4rem;
@@ -16,32 +16,32 @@ html{
   text-shadow: 0 0 1rem slateblue;
 }
 #row1 > td {
-  background: #0074D9;
+  background: #0074d9;
 }
-#row2 > td{
-  background: #FF851B;
+#row2 > td {
+  background: #ff851b;
 }
-#row3 > td{
-  background: #FF4136;
+#row3 > td {
+  background: #ff4136;
 }
-#row4 > td{
-  background: #FFDC00;
+#row4 > td {
+  background: #ffdc00;
 }
 #row5 > td {
-  background: #39CCCC;
+  background: #39cccc;
 }
-#row6 > td{
+#row6 > td {
   background: #85144b;
 }
-#row7 > td{
-  background: #AAAAAA;
+#row7 > td {
+  background: #aaaaaa;
 }
-#row8 > td{
-  background: #01FF70;
+#row8 > td {
+  background: #01ff70;
 }
-td.active{
+td.active {
   transform: scale(1.05);
-  border-color: #F5FFFA;
+  border-color: #f5fffa;
   box-shadow: 0 0 1rem white;
   opacity: 1;
 }
@@ -82,6 +82,3 @@ td {
 #row8 > td.active{
   background: lime;
 }*/
-
-
-
